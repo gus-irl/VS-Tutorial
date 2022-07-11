@@ -1,4 +1,3 @@
-# function a()
 from random import random
 
 
