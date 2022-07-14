@@ -56,6 +56,8 @@ def predict():
 def coin_game():
     points = 10
     rounds = 0
+    print("\n" * 100 + "** Welcome to Coin Game! **@ext:KnisterPeter.vscode-github")
+    print("Your Starting Points: " + str(points) + "\n")
     while(points > 0):
         rounds += 1
         print("** ROUND " + str(rounds) + " **")
