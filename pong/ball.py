@@ -12,8 +12,8 @@ class Ball(pygame.sprite.Sprite):
 
         pygame.draw.rect(self.image, color, [0,0,width, height], 0, 10)
 
-        self.speed = randint(2, 4)
-        self.speed_multiplier = 1
+        self.speed = 3
+        self.speed_multiplier = 0
         self.original_velocity = [self.speed, randint(4,8)]
         self.velocity = [self.speed, randint(0,0)]
 
@@ -36,8 +36,8 @@ class Ball(pygame.sprite.Sprite):
             self.speed_multiplier = 0
             self.velocity[0] = self.original_velocity[0]
             # self.original_velocity[0] += self.speed_multiplier
-        else:
-            self.speed_multiplier += 0.25
+        elif (self.speed_multiplier < 2):
+            self.speed_multiplier += 0.2
             # self.speed += self.speed_multiplier
 
         # print("Speed Multiplier: " + str(self.speed_multiplier))

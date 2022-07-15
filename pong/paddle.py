@@ -1,5 +1,6 @@
 import pygame
 BLACK = (0,0,0)
+window_size = [700,700]
 
 
 class Paddle(pygame.sprite.Sprite): # Paddle object
@@ -9,8 +10,12 @@ class Paddle(pygame.sprite.Sprite): # Paddle object
         self.image = pygame.Surface([width, height]) # Image resolution
         self.image.fill(BLACK)
         self.image.set_colorkey(BLACK)
-
-        pygame.draw.rect(self.image, color, [0, 0, width, height]) # Draw the paddle
+        self.height = height
+        self.color = color
+        # self.red = 255
+        # self.green = 255
+        # self.blue = 255
+        pygame.draw.rect(self.image, self.color, [0, 0, width, height]) # Draw the paddle
 
         self.rect = self.image.get_rect() # Get rectangle object that has the dimensions of the image (?)
     def moveUp(self, pixels):
@@ -20,5 +25,5 @@ class Paddle(pygame.sprite.Sprite): # Paddle object
             self.rect.y = 0
     def moveDown(self, pixels):
         self.rect.y += pixels
-        if self.rect.y > 400:
-            self.rect.y = 400
+        if (self.rect.y > window_size[1] - self.height):
+            self.rect.y = window_size[1] - self.height

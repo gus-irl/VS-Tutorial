@@ -5,11 +5,9 @@ def guessing_game():
     lower_range = int(input("What is the lowest number you want to guess?\n"))
     highest_range = int(input("What is the highest number you want to guess?\n"))
 
-    random_number = random.randint(lower_range, highest_range + 1)
+    random_number = random.randint(lower_range, highest_range)
     guess = 0
     guesses = 0
-
-
 
     print("\n" * 100)
     while(random_number != guess):
@@ -23,7 +21,7 @@ def guessing_game():
             print("Too Low!")
             guesses += 1
         else:
-            print("\nYou guessed my number in " + str(guesses) + " attempts!")
+            print(str(random_number) + "!\nYou guessed my number in " + str(guesses) + " attempts!\n")
             break
 
         print("\nYour last guess: " + str(guess))
@@ -31,3 +29,5 @@ def guessing_game():
     again = input("Would you like to play again? (Y/n)").lower()
     if (again == 'y'):
         guessing_game()
+    
+guessing_game() # Run the game immedietely when pressing run python file (play button)
