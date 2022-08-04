@@ -15,7 +15,7 @@ class Paddle(pygame.sprite.Sprite): # Paddle object
         # self.red = 255
         # self.green = 255
         # self.blue = 255
-        pygame.draw.rect(self.image, self.color, [0, 0, width, height]) # Draw the paddle
+        pygame.draw.rect(self.image, self.color, [0, 0, width, height], 0, 1000) # Draw the paddle
 
         self.rect = self.image.get_rect() # Get rectangle object that has the dimensions of the image (?)
     def moveUp(self, pixels):
